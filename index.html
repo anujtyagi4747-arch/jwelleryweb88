@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>JYNN — Premium Jewellery</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  background:#0b0b0b;
+  color:#f5f2ec;
+  font-family:'DM Sans',sans-serif;
+}
+
+a{
+  color:inherit;
+  text-decoration:none;
+}
+
+button{
+  font-family:inherit;
+}
+</style>
+</head>
+
+<body>
+
+<!-- HERO START -->
+<section class="hero">
+
+  <video
+    class="hero-video"
+    autoplay
+    muted
+    loop
+    playsinline
+    preload="auto"
+  >
+    <source src="https://cdn.coverr.co/videos/coverr-a-woman-wearing-jewelry-1576/1080p.mp4" type="video/mp4">
+  </video>
+
+  <div class="hero-overlay"></div>
+
+  <header class="navbar">
+    <div class="menu">☰</div>
+
+    <div class="logo">JYNN</div>
+
+    <div class="nav-icons">
+      <span>⌕</span>
+      <span>♡</span>
+      <span>🛒</span>
+    </div>
+  </header>
+
+  <div class="hero-content">
+    <p>✦ THE NEW STANDARD</p>
+    <h1>JEWELLERY<br>WITH CHARACTER</h1>
+    <a href="#collection" class="hero-btn">
+      SHOP COLLECTION
+    </a>
+  </div>
+
+</section>
+<!-- HERO END -->
+  <style>
+/* ===== HERO ===== */
+
+.hero{
+  height:100vh;
+  min-height:650px;
+  position:relative;
+  overflow:hidden;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:#111;
+}
+
+.hero-video{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  z-index:0;
+}
+
+.hero-overlay{
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(0,0,0,.48),
+      rgba(0,0,0,.20) 45%,
+      rgba(0,0,0,.65)
+    );
+  z-index:1;
+}
+
+/* ===== NAVBAR ===== */
+
+.navbar{
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:85px;
+  padding:0 5%;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  z-index:5;
+  border-bottom:1px solid rgba(255,255,255,.18);
+}
+
+.menu{
+  font-size:22px;
+  cursor:pointer;
+  width:80px;
+}
+
+.logo{
+  font-family:'Playfair Display',serif;
+  font-size:31px;
+  letter-spacing:7px;
+  font-weight:500;
+}
+
+.nav-icons{
+  width:80px;
+  display:flex;
+  justify-content:flex-end;
+  gap:16px;
+  font-size:20px;
+}
+
+.nav-icons span{
+  cursor:pointer;
+  transition:.3s;
+}
+
+.nav-icons span:hover{
+  opacity:.55;
+}
+
+/* ===== HERO CONTENT ===== */
+
+.hero-content{
+  position:relative;
+  z-index:3;
+  text-align:center;
+  max-width:900px;
+  padding:20px;
+}
+
+.hero-content p{
+  font-size:11px;
+  letter-spacing:4px;
+  margin-bottom:24px;
+}
+
+.hero-content h1{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(48px,7vw,100px);
+  line-height:.94;
+  font-weight:400;
+  letter-spacing:2px;
+  margin-bottom:38px;
+}
+
+.hero-btn{
+  display:inline-block;
+  padding:15px 30px;
+  border:1px solid rgba(255,255,255,.75);
+  font-size:11px;
+  letter-spacing:2px;
+  transition:.35s;
+  background:rgba(0,0,0,.15);
+  backdrop-filter:blur(5px);
+}
+
+.hero-btn:hover{
+  background:#fff;
+  color:#111;
+}
+
+/* ===== MOBILE ===== */
+
+@media(max-width:600px){
+
+  .hero{
+    min-height:100svh;
+  }
+
+  .navbar{
+    height:72px;
+    padding:0 20px;
+  }
+
+  .menu{
+    width:55px;
+    font-size:20px;
+  }
+
+  .logo{
+    font-size:24px;
+    letter-spacing:5px;
+  }
+
+  .nav-icons{
+    width:55px;
+    gap:9px;
+    font-size:17px;
+  }
+
+  .hero-content{
+    padding:20px;
+  }
+
+  .hero-content p{
+    font-size:9px;
+    letter-spacing:3px;
+    margin-bottom:18px;
+  }
+
+  .hero-content h1{
+    font-size:48px;
+    line-height:.96;
+    letter-spacing:1px;
+    margin-bottom:30px;
+  }
+
+  .hero-btn{
+    padding:13px 23px;
+    font-size:9px;
+  }
+}
+  </style>
+  <!-- INTRO SECTION -->
+
+<section class="intro-section">
+
+  <div class="intro-number">00 — INTRODUCTION</div>
+
+  <div class="intro-content">
+    <p class="intro-small">
+      JEWELLERY MADE TO<br>BE REMEMBERED
+    </p>
+
+    <h2>
+      BOLD IN DETAIL.<br>
+      TIMELESS IN SPIRIT.
+    </h2>
+
+    <p class="intro-text">
+      Discover contemporary jewellery created for
+      those who believe that the smallest details
+      can make the biggest statement.
+    </p>
+
+    <a href="#collection" class="intro-link">
+      DISCOVER THE COLLECTION&nbsp; →
+    </a>
+  </div>
+
+</section>
+
+<style>
+
+/* INTRO */
+
+.intro-section{
+  background:#111;
+  color:#f4f1ea;
+  min-height:620px;
+  padding:120px 7%;
+  display:flex;
+  justify-content:space-between;
+  position:relative;
+}
+
+.intro-number{
+  font-size:10px;
+  letter-spacing:3px;
+  opacity:.45;
+}
+
+.intro-content{
+  width:65%;
+  max-width:850px;
+}
+
+.intro-small{
+  font-size:10px;
+  line-height:1.8;
+  letter-spacing:3px;
+  opacity:.55;
+  margin-bottom:35px;
+}
+
+.intro-content h2{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(45px,6vw,82px);
+  line-height:.98;
+  font-weight:400;
+  letter-spacing:-1px;
+  margin-bottom:38px;
+}
+
+.intro-text{
+  max-width:470px;
+  font-size:14px;
+  line-height:1.8;
+  opacity:.6;
+  margin-bottom:35px;
+}
+
+.intro-link{
+  display:inline-block;
+  font-size:10px;
+  letter-spacing:2px;
+  padding-bottom:9px;
+  border-bottom:1px solid rgba(255,255,255,.5);
+  transition:.3s;
+}
+
+.intro-link:hover{
+  opacity:.55;
+}
+
+
+/* MOBILE */
+
+@media(max-width:700px){
+
+  .intro-section{
+    min-height:auto;
+    padding:80px 20px;
+    display:block;
+  }
+
+  .intro-number{
+    margin-bottom:60px;
+  }
+
+  .intro-content{
+    width:100%;
+  }
+
+  .intro-small{
+    margin-bottom:25px;
+  }
+
+  .intro-content h2{
+    font-size:47px;
+    line-height:1;
+    margin-bottom:30px;
+  }
+
+  .intro-text{
+    font-size:13px;
+    line-height:1.7;
+  }
+
+}
+
+</style>
+<!-- COLLECTION SECTION -->
+
+<section id="collection" class="collection">
+
+  <div class="collection-head">
+    <span>01 — COLLECTION</span>
+    <h2>DISCOVER<br>YOUR SIGNATURE</h2>
+    <p>
+      Timeless jewellery designed to become
+      part of your everyday story.
+    </p>
+  </div>
+
+  <div class="category-grid">
+
+    <a href="#" class="category-card">
+      <div class="category-img img-one"></div>
+      <div class="category-info">
+        <span>01</span>
+        <h3>NECKLACES</h3>
+        <b>EXPLORE →</b>
+      </div>
+    </a>
+
+    <a href="#" class="category-card">
+      <div class="category-img img-two"></div>
+      <div class="category-info">
+        <span>02</span>
+        <h3>BRACELETS</h3>
+        <b>EXPLORE →</b>
+      </div>
+    </a>
+
+    <a href="#" class="category-card">
+      <div class="category-img img-three"></div>
+      <div class="category-info">
+        <span>03</span>
+        <h3>RINGS</h3>
+        <b>EXPLORE →</b>
+      </div>
+    </a>
+
+    <a href="#" class="category-card">
+      <div class="category-img img-four"></div>
+      <div class="category-info">
+        <span>04</span>
+        <h3>EARRINGS</h3>
+        <b>EXPLORE →</b>
+      </div>
+    </a>
+
+  </div>
+
+</section>
+
+
+<style>
+
+/* COLLECTION */
+
+.collection{
+  background:#f3f0e9;
+  color:#111;
+  padding:110px 6%;
+}
+
+.collection-head{
+  max-width:650px;
+  margin-bottom:70px;
+}
+
+.collection-head span{
+  font-size:10px;
+  letter-spacing:3px;
+  opacity:.6;
+}
+
+.collection-head h2{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(42px,6vw,75px);
+  line-height:.95;
+  font-weight:400;
+  margin:22px 0;
+}
+
+.collection-head p{
+  max-width:420px;
+  font-size:14px;
+  line-height:1.7;
+  opacity:.65;
+}
+
+.category-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:25px;
+}
+
+.category-card{
+  position:relative;
+  height:580px;
+  overflow:hidden;
+  background:#ddd;
+}
+
+.category-img{
+  width:100%;
+  height:100%;
+  background-size:cover;
+  background-position:center;
+  transition:transform .8s ease;
+}
+
+.category-card:hover .category-img{
+  transform:scale(1.06);
+}
+
+.img-one{
+  background-image:url("https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=1200&q=85");
+}
+
+.img-two{
+  background-image:url("https://images.unsplash.com/photo-1611652022419-a9419f74343d?auto=format&fit=crop&w=1200&q=85");
+}
+
+.img-three{
+  background-image:url("https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=1200&q=85");
+}
+
+.img-four{
+  background-image:url("https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=1200&q=85");
+}
+
+.category-info{
+  position:absolute;
+  left:25px;
+  right:25px;
+  bottom:25px;
+  padding:22px;
+  color:white;
+  background:rgba(0,0,0,.42);
+  backdrop-filter:blur(8px);
+}
+
+.category-info span{
+  font-size:10px;
+  letter-spacing:2px;
+  opacity:.7;
+}
+
+.category-info h3{
+  font-family:'Playfair Display',serif;
+  font-size:28px;
+  font-weight:400;
+  margin:8px 0 13px;
+}
+
+.category-info b{
+  font-size:9px;
+  letter-spacing:2px;
+}
+
+/* MOBILE */
+
+@media(max-width:600px){
+
+  .collection{
+    padding:75px 20px;
+  }
+
+  .collection-head{
+    margin-bottom:45px;
+  }
+
+  .collection-head h2{
+    font-size:45px;
+  }
+
+  .category-grid{
+    grid-template-columns:1fr;
+    gap:18px;
+  }
+
+  .category-card{
+    height:470px;
+  }
+
+  .category-info{
+    left:15px;
+    right:15px;
+    bottom:15px;
+  }
+
+}
+
+</style>
+<!-- FEATURED COLLECTION -->
+
+<section class="featured">
+
+  <div class="featured-top">
+    <div>
+      <span>02 — THE EDIT</span>
+      <h2>NEW<br>ARRIVALS</h2>
+    </div>
+
+    <a href="#" class="view-all">VIEW ALL →</a>
+  </div>
+
+  <div class="product-grid">
+
+    <div class="product-card">
+      <div class="product-image p1">
+        <span class="tag">NEW</span>
+        <button class="heart">♡</button>
+      </div>
+      <div class="product-detail">
+        <h3>SCULPTED GOLD NECKLACE</h3>
+        <p>₹2,499</p>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <div class="product-image p2">
+        <span class="tag">NEW</span>
+        <button class="heart">♡</button>
+      </div>
+      <div class="product-detail">
+        <h3>MINIMAL PEARL DROP</h3>
+        <p>₹1,899</p>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <div class="product-image p3">
+        <button class="heart">♡</button>
+      </div>
+      <div class="product-detail">
+        <h3>CLASSIC SIGNET RING</h3>
+        <p>₹1,599</p>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <div class="product-image p4">
+        <button class="heart">♡</button>
+      </div>
+      <div class="product-detail">
+        <h3>CURVE STATEMENT EARRINGS</h3>
+        <p>₹2,199</p>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+
+<style>
+
+/* FEATURED */
+
+.featured{
+  background:#111;
+  color:#f4f1ea;
+  padding:115px 6%;
+}
+
+.featured-top{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-end;
+  margin-bottom:65px;
+}
+
+.featured-top span{
+  font-size:10px;
+  letter-spacing:3px;
+  opacity:.55;
+}
+
+.featured-top h2{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(45px,6vw,75px);
+  font-weight:400;
+  line-height:.9;
+  margin-top:20px;
+}
+
+.view-all{
+  font-size:10px;
+  letter-spacing:2px;
+  border-bottom:1px solid #777;
+  padding-bottom:8px;
+}
+
+.product-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:20px;
+}
+
+.product-card{
+  min-width:0;
+}
+
+.product-image{
+  height:440px;
+  position:relative;
+  overflow:hidden;
+  background-size:cover;
+  background-position:center;
+}
+
+.product-image::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(
+    to bottom,
+    transparent 65%,
+    rgba(0,0,0,.25)
+  );
+}
+
+.p1{
+  background-image:url("https://images.unsplash.com/photo-1617038220319-276d3cfab638?auto=format&fit=crop&w=900&q=85");
+}
+
+.p2{
+  background-image:url("https://images.unsplash.com/photo-1535632787350-4e68ef0ac584?auto=format&fit=crop&w=900&q=85");
+}
+
+.p3{
+  background-image:url("https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=900&q=85");
+}
+
+.p4{
+  background-image:url("https://images.unsplash.com/photo-1535556116002-6281ff3e9fcd?auto=format&fit=crop&w=900&q=85");
+}
+
+.product-image{
+  transition:transform .5s ease;
+}
+
+.product-card:hover .product-image{
+  transform:scale(1.025);
+}
+
+.tag{
+  position:absolute;
+  top:15px;
+  left:15px;
+  z-index:2;
+  font-size:8px;
+  letter-spacing:2px;
+  background:#f4f1ea;
+  color:#111;
+  padding:8px 11px;
+}
+
+.heart{
+  position:absolute;
+  right:15px;
+  top:13px;
+  z-index:3;
+  border:0;
+  background:transparent;
+  color:white;
+  font-size:25px;
+  cursor:pointer;
+}
+
+.product-detail{
+  padding-top:17px;
+}
+
+.product-detail h3{
+  font-size:10px;
+  letter-spacing:1.5px;
+  font-weight:500;
+}
+
+.product-detail p{
+  font-size:12px;
+  margin-top:8px;
+  opacity:.65;
+}
+
+/* MOBILE */
+
+@media(max-width:800px){
+
+  .featured{
+    padding:75px 20px;
+  }
+
+  .featured-top{
+    align-items:flex-end;
+    margin-bottom:40px;
+  }
+
+  .featured-top h2{
+    font-size:47px;
+  }
+
+  .view-all{
+    font-size:9px;
+  }
+
+  .product-grid{
+    grid-template-columns:repeat(2,1fr);
+    gap:25px 12px;
+  }
+
+  .product-image{
+    height:300px;
+  }
+
+}
+
+@media(max-width:480px){
+
+  .product-image{
+    height:250px;
+  }
+
+  .product-detail h3{
+    font-size:9px;
+  }
+
+}
+
+</style>

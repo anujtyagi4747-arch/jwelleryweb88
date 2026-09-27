@@ -1,457 +1,974 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>JYNN — Premium Jewellery</title>
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+<title>Queziva | Fashion Jewellery</title>
+
+<meta name="description"
+content="Queziva Fashion Jewellery — Make Every Look Special.">
+
+<link rel="preconnect"
+href="https://fonts.googleapis.com">
+
+<link rel="preconnect"
+href="https://fonts.gstatic.com"
+crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@400;500;600&display=swap"
+rel="stylesheet">
+
 
 <style>
+
+/* =========================
+   BASIC RESET
+========================= */
+
 *{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
 html{
-  scroll-behavior:smooth;
+    scroll-behavior:smooth;
 }
 
 body{
-  background:#0b0b0b;
-  color:#f5f2ec;
-  font-family:'DM Sans',sans-serif;
+    background:#090909;
+    color:#f5f0e9;
+    font-family:'DM Sans',sans-serif;
+    overflow-x:hidden;
 }
 
 a{
-  color:inherit;
-  text-decoration:none;
+    text-decoration:none;
+    color:inherit;
 }
 
 button{
-  font-family:inherit;
-}
-</style>
-</head>
-
-<body>
-
-<!-- HERO START -->
-<section class="hero">
-
-  <video
-  id="heroVideo"
-  class="hero-video"
-  autoplay
-  muted
-  loop
-  playsinline
-  preload="auto"
-  poster="https://images.unsplash.com/photo-1611652022419-a9419f74343d?auto=format&fit=crop&w=1600&q=85"
->
-  <source
-    src="https://storage.googleapis.com/coverr-main/mp4/Winter-Grass.mp4"
-    type="video/mp4"
-  >
-</video>
-
-<script>
-const heroVideo = document.getElementById("heroVideo");
-
-heroVideo.muted = true;
-
-heroVideo.play().catch(() => {
-  document.addEventListener("touchstart", () => {
-    heroVideo.play();
-  }, {once:true});
-
-  document.addEventListener("click", () => {
-    heroVideo.play();
-  }, {once:true});
-});
-</script>
-  <div class="hero-overlay"></div>
-
-  <header class="navbar">
-    <div class="menu">☰</div>
-
-    <div class="logo">JYNN</div>
-
-    <div class="nav-icons">
-      <span>⌕</span>
-      <span>♡</span>
-      <span>🛒</span>
-    </div>
-  </header>
-
-  <div class="hero-content">
-    <p>✦ THE NEW STANDARD</p>
-    <h1>JEWELLERY<br>WITH CHARACTER</h1>
-    <a href="#collection" class="hero-btn">
-      SHOP COLLECTION
-    </a>
-  </div>
-
-</section>
-<!-- HERO END -->
-  <style>
-/* ===== HERO ===== */
-
-.hero{
-  height:100vh;
-  min-height:650px;
-  position:relative;
-  overflow:hidden;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  background:#111;
+    font-family:inherit;
 }
 
-.hero-video{
-  position:absolute;
-  inset:0;
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  z-index:0;
+
+/* =========================
+   HERO
+========================= */
+
+.qz-hero{
+
+    position:relative;
+
+    width:100%;
+
+    height:100svh;
+
+    min-height:650px;
+
+    overflow:hidden;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    background:#111;
+
 }
 
-.hero-overlay{
-  position:absolute;
-  inset:0;
-  background:
+
+/* VIDEO */
+
+.qz-hero-video{
+
+    position:absolute;
+
+    inset:0;
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    z-index:0;
+
+}
+
+
+/* DARK OVERLAY */
+
+.qz-hero-overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    z-index:1;
+
+    background:
+
     linear-gradient(
-      to bottom,
-      rgba(0,0,0,.48),
-      rgba(0,0,0,.20) 45%,
-      rgba(0,0,0,.65)
+        to bottom,
+        rgba(0,0,0,.65),
+        rgba(0,0,0,.18) 45%,
+        rgba(0,0,0,.75)
     );
-  z-index:1;
+
 }
 
-/* ===== NAVBAR ===== */
 
-.navbar{
-  position:absolute;
-  top:0;
-  left:0;
-  width:100%;
-  height:85px;
-  padding:0 5%;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  z-index:5;
-  border-bottom:1px solid rgba(255,255,255,.18);
+/* =========================
+   NAVBAR
+========================= */
+
+.qz-navbar{
+
+    position:absolute;
+
+    top:0;
+    left:0;
+
+    width:100%;
+
+    height:82px;
+
+    padding:0 5%;
+
+    z-index:5;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    border-bottom:
+    1px solid rgba(255,255,255,.16);
+
 }
 
-.menu{
-  font-size:22px;
-  cursor:pointer;
-  width:80px;
+
+/* MENU */
+
+.qz-menu{
+
+    width:90px;
+
+    font-size:23px;
+
+    cursor:pointer;
+
 }
 
-.logo{
-  font-family:'Playfair Display',serif;
-  font-size:31px;
-  letter-spacing:7px;
-  font-weight:500;
+
+/* LOGO */
+
+.qz-logo{
+
+    font-family:
+    'Playfair Display',serif;
+
+    font-size:29px;
+
+    letter-spacing:6px;
+
+    font-weight:500;
+
 }
 
-.nav-icons{
-  width:80px;
-  display:flex;
-  justify-content:flex-end;
-  gap:16px;
-  font-size:20px;
-}
 
-.nav-icons span{
-  cursor:pointer;
-  transition:.3s;
-}
+/* RIGHT ICONS */
 
-.nav-icons span:hover{
-  opacity:.55;
-}
+.qz-nav-icons{
 
-/* ===== HERO CONTENT ===== */
+    width:90px;
 
-.hero-content{
-  position:relative;
-  z-index:3;
-  text-align:center;
-  max-width:900px;
-  padding:20px;
-}
+    display:flex;
 
-.hero-content p{
-  font-size:11px;
-  letter-spacing:4px;
-  margin-bottom:24px;
-}
+    justify-content:flex-end;
 
-.hero-content h1{
-  font-family:'Playfair Display',serif;
-  font-size:clamp(48px,7vw,100px);
-  line-height:.94;
-  font-weight:400;
-  letter-spacing:2px;
-  margin-bottom:38px;
-}
+    gap:17px;
 
-.hero-btn{
-  display:inline-block;
-  padding:15px 30px;
-  border:1px solid rgba(255,255,255,.75);
-  font-size:11px;
-  letter-spacing:2px;
-  transition:.35s;
-  background:rgba(0,0,0,.15);
-  backdrop-filter:blur(5px);
-}
-
-.hero-btn:hover{
-  background:#fff;
-  color:#111;
-}
-
-/* ===== MOBILE ===== */
-
-@media(max-width:600px){
-
-  .hero{
-    min-height:100svh;
-  }
-
-  .navbar{
-    height:72px;
-    padding:0 20px;
-  }
-
-  .menu{
-    width:55px;
     font-size:20px;
-  }
 
-  .logo{
-    font-size:24px;
-    letter-spacing:5px;
-  }
+}
 
-  .nav-icons{
-    width:55px;
-    gap:9px;
-    font-size:17px;
-  }
+.qz-nav-icons span{
 
-  .hero-content{
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.qz-nav-icons span:hover{
+
+    opacity:.5;
+
+}
+
+
+/* =========================
+   HERO CONTENT
+========================= */
+
+.qz-hero-content{
+
+    position:relative;
+
+    z-index:3;
+
+    text-align:center;
+
     padding:20px;
-  }
 
-  .hero-content p{
-    font-size:9px;
-    letter-spacing:3px;
-    margin-bottom:18px;
-  }
+    max-width:1000px;
 
-  .hero-content h1{
-    font-size:48px;
-    line-height:.96;
+}
+
+
+.qz-hero-small{
+
+    font-size:10px;
+
+    letter-spacing:4px;
+
+    margin-bottom:25px;
+
+    opacity:.9;
+
+}
+
+
+.qz-hero-title{
+
+    font-family:
+    'Playfair Display',serif;
+
+    font-size:
+    clamp(48px,8vw,105px);
+
+    font-weight:400;
+
+    line-height:.92;
+
     letter-spacing:1px;
-    margin-bottom:30px;
-  }
 
-  .hero-btn{
-    padding:13px 23px;
+    margin-bottom:38px;
+
+}
+
+
+.qz-hero-button{
+
+    display:inline-block;
+
+    padding:15px 31px;
+
+    border:
+    1px solid rgba(255,255,255,.8);
+
+    font-size:10px;
+
+    letter-spacing:2px;
+
+    background:
+    rgba(0,0,0,.15);
+
+    backdrop-filter:blur(6px);
+
+    transition:.35s;
+
+}
+
+
+.qz-hero-button:hover{
+
+    background:#fff;
+
+    color:#111;
+
+}
+
+
+/* =========================
+   SCROLL INDICATOR
+========================= */
+
+.qz-scroll{
+
+    position:absolute;
+
+    bottom:28px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    z-index:4;
+
     font-size:9px;
-  }
-}
-  </style>
-  <!-- INTRO SECTION -->
 
-<section class="intro-section">
+    letter-spacing:3px;
 
-  <div class="intro-number">00 — INTRODUCTION</div>
+    opacity:.65;
 
-  <div class="intro-content">
-    <p class="intro-small">
-      JEWELLERY MADE TO<br>BE REMEMBERED
-    </p>
-
-    <h2>
-      BOLD IN DETAIL.<br>
-      TIMELESS IN SPIRIT.
-    </h2>
-
-    <p class="intro-text">
-      Discover contemporary jewellery created for
-      those who believe that the smallest details
-      can make the biggest statement.
-    </p>
-
-    <a href="#collection" class="intro-link">
-      DISCOVER THE COLLECTION&nbsp; →
-    </a>
-  </div>
-
-</section>
-
-<style>
-
-/* INTRO */
-
-.intro-section{
-  background:#111;
-  color:#f4f1ea;
-  min-height:620px;
-  padding:120px 7%;
-  display:flex;
-  justify-content:space-between;
-  position:relative;
-}
-
-.intro-number{
-  font-size:10px;
-  letter-spacing:3px;
-  opacity:.45;
-}
-
-.intro-content{
-  width:65%;
-  max-width:850px;
-}
-
-.intro-small{
-  font-size:10px;
-  line-height:1.8;
-  letter-spacing:3px;
-  opacity:.55;
-  margin-bottom:35px;
-}
-
-.intro-content h2{
-  font-family:'Playfair Display',serif;
-  font-size:clamp(45px,6vw,82px);
-  line-height:.98;
-  font-weight:400;
-  letter-spacing:-1px;
-  margin-bottom:38px;
-}
-
-.intro-text{
-  max-width:470px;
-  font-size:14px;
-  line-height:1.8;
-  opacity:.6;
-  margin-bottom:35px;
-}
-
-.intro-link{
-  display:inline-block;
-  font-size:10px;
-  letter-spacing:2px;
-  padding-bottom:9px;
-  border-bottom:1px solid rgba(255,255,255,.5);
-  transition:.3s;
-}
-
-.intro-link:hover{
-  opacity:.55;
 }
 
 
-/* MOBILE */
+/* =========================
+   MOBILE
+========================= */
 
 @media(max-width:700px){
 
-  .intro-section{
-    min-height:auto;
-    padding:80px 20px;
-    display:block;
-  }
+    .qz-navbar{
 
-  .intro-number{
-    margin-bottom:60px;
-  }
+        height:70px;
 
-  .intro-content{
-    width:100%;
-  }
+        padding:0 20px;
 
-  .intro-small{
-    margin-bottom:25px;
-  }
+    }
 
-  .intro-content h2{
-    font-size:47px;
-    line-height:1;
-    margin-bottom:30px;
-  }
 
-  .intro-text{
-    font-size:13px;
-    line-height:1.7;
-  }
+    .qz-menu{
+
+        width:55px;
+
+        font-size:21px;
+
+    }
+
+
+    .qz-logo{
+
+        font-size:22px;
+
+        letter-spacing:4px;
+
+    }
+
+
+    .qz-nav-icons{
+
+        width:55px;
+
+        gap:9px;
+
+        font-size:17px;
+
+    }
+
+
+    .qz-hero{
+
+        min-height:100svh;
+
+    }
+
+
+    .qz-hero-title{
+
+        font-size:
+        clamp(45px,13vw,62px);
+
+        line-height:.96;
+
+    }
+
+
+    .qz-hero-small{
+
+        font-size:8px;
+
+        letter-spacing:3px;
+
+    }
+
+
+    .qz-hero-button{
+
+        padding:13px 23px;
+
+        font-size:9px;
+
+    }
+
+}
+
+
+/* =========================
+   VIDEO FALLBACK
+========================= */
+
+.qz-video-fallback{
+
+    position:absolute;
+
+    inset:0;
+
+    z-index:-1;
+
+    background:
+
+    radial-gradient(
+        circle at center,
+        #6d5140,
+        #18110e 55%,
+        #050505
+    );
 
 }
 
 </style>
-<!-- COLLECTION SECTION -->
 
-<section id="collection" class="collection">
+</head>
 
-  <div class="collection-head">
-    <span>01 — COLLECTION</span>
-    <h2>DISCOVER<br>YOUR SIGNATURE</h2>
+
+<body>
+
+
+<!-- ==================================
+     QUEZIVA HERO
+================================== -->
+
+<section class="qz-hero">
+
+
+    <!-- FALLBACK BACKGROUND -->
+
+    <div class="qz-video-fallback"></div>
+
+
+    <!-- BACKGROUND VIDEO -->
+
+    <video
+        id="quezivaHeroVideo"
+        class="qz-hero-video"
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="auto">
+
+        <source
+        src="https://storage.googleapis.com/coverr-main/mp4/Mt_Baker.mp4"
+        type="video/mp4">
+
+    </video>
+
+
+    <!-- OVERLAY -->
+
+    <div class="qz-hero-overlay"></div>
+
+
+    <!-- NAVBAR -->
+
+    <header class="qz-navbar">
+
+
+        <div class="qz-menu">
+
+            ☰
+
+        </div>
+
+
+        <div class="qz-logo">
+
+            QUEZIVA
+
+        </div>
+
+
+        <div class="qz-nav-icons">
+
+            <span>⌕</span>
+
+            <span>♡</span>
+
+            <span>🛍</span>
+
+        </div>
+
+
+    </header>
+
+
+    <!-- HERO TEXT -->
+
+    <div class="qz-hero-content">
+
+
+        <div class="qz-hero-small">
+
+            FASHION JEWELLERY
+
+        </div>
+
+
+        <h1 class="qz-hero-title">
+
+            MAKE EVERY<br>
+
+            LOOK SPECIAL
+
+        </h1>
+
+
+        <a
+        href="#queziva-collection"
+        class="qz-hero-button">
+
+            EXPLORE COLLECTION
+
+        </a>
+
+
+    </div>
+
+
+    <div class="qz-scroll">
+
+        SCROLL TO DISCOVER ↓
+
+    </div>
+
+
+</section>
+
+
+
+<!-- ==================================
+     VIDEO AUTOPLAY SCRIPT
+================================== -->
+
+<script>
+
+const qzVideo =
+document.getElementById(
+    "quezivaHeroVideo"
+);
+
+
+/* FORCE MUTED AUTOPLAY */
+
+if(qzVideo){
+
+    qzVideo.muted = true;
+
+    qzVideo.setAttribute(
+        "muted",
+        ""
+    );
+
+    qzVideo.setAttribute(
+        "playsinline",
+        ""
+    );
+
+
+    const startVideo = () => {
+
+        qzVideo.play().catch(()=>{});
+
+    };
+
+
+    startVideo();
+
+
+    window.addEventListener(
+        "load",
+        startVideo
+    );
+
+
+    document.addEventListener(
+        "touchstart",
+        startVideo,
+        {once:true}
+    );
+
+
+    document.addEventListener(
+        "click",
+        startVideo,
+        {once:true}
+    );
+
+}
+
+</script>
+<!-- ==================================
+     QUEZIVA ABOUT SECTION
+================================== -->
+
+<section class="qz-about-section">
+
+    <div class="qz-about-number">
+        01 — ABOUT QUEZIVA
+    </div>
+
+
+    <div class="qz-about-content">
+
+        <div class="qz-about-label">
+            FASHION • STYLE • ELEGANCE
+        </div>
+
+
+        <h2>
+            JEWELLERY<br>
+            THAT MAKES<br>
+            YOU SPECIAL.
+        </h2>
+
+
+        <p>
+            Queziva Fashion Jewellery brings
+            together contemporary style and
+            timeless elegance. Our collection
+            is created for women who love to
+            express themselves through
+            beautiful details.
+        </p>
+
+
+        <p>
+            From everyday essentials to
+            statement pieces, Queziva is
+            designed to make every look
+            special.
+        </p>
+
+
+        <a
+        href="#queziva-collection"
+        class="qz-about-button">
+
+            DISCOVER QUEZIVA →
+
+        </a>
+
+    </div>
+
+</section>
+
+
+<style>
+
+/* ==================================
+   ABOUT SECTION
+================================== */
+
+.qz-about-section{
+
+    width:100%;
+
+    background:#f3eee7;
+
+    color:#171310;
+
+    padding:
+    120px 7%;
+
+    display:grid;
+
+    grid-template-columns:
+    1fr 2.2fr;
+
+    gap:70px;
+
+}
+
+
+/* NUMBER */
+
+.qz-about-number{
+
+    font-size:10px;
+
+    letter-spacing:3px;
+
+    opacity:.5;
+
+}
+
+
+/* CONTENT */
+
+.qz-about-content{
+
+    max-width:850px;
+
+}
+
+
+/* SMALL LABEL */
+
+.qz-about-label{
+
+    font-size:10px;
+
+    letter-spacing:3px;
+
+    opacity:.5;
+
+    margin-bottom:28px;
+
+}
+
+
+/* HEADING */
+
+.qz-about-content h2{
+
+    font-family:
+    'Playfair Display',serif;
+
+    font-weight:400;
+
+    font-size:
+    clamp(45px,6vw,82px);
+
+    line-height:.94;
+
+    letter-spacing:-1px;
+
+    margin-bottom:38px;
+
+}
+
+
+/* PARAGRAPH */
+
+.qz-about-content p{
+
+    max-width:620px;
+
+    font-size:14px;
+
+    line-height:1.9;
+
+    opacity:.68;
+
+    margin-bottom:18px;
+
+}
+
+
+/* BUTTON */
+
+.qz-about-button{
+
+    display:inline-block;
+
+    margin-top:20px;
+
+    padding-bottom:9px;
+
+    border-bottom:
+    1px solid #333;
+
+    font-size:10px;
+
+    letter-spacing:2px;
+
+    transition:.3s;
+
+}
+
+
+.qz-about-button:hover{
+
+    opacity:.5;
+
+}
+
+
+/* ==================================
+   MOBILE
+================================== */
+
+@media(max-width:700px){
+
+    .qz-about-section{
+
+        padding:80px 22px;
+
+        display:block;
+
+    }
+
+
+    .qz-about-number{
+
+        margin-bottom:55px;
+
+    }
+
+
+    .qz-about-content{
+
+        width:100%;
+
+    }
+
+
+    .qz-about-label{
+
+        font-size:8px;
+
+        letter-spacing:2.5px;
+
+        margin-bottom:24px;
+
+    }
+
+
+    .qz-about-content h2{
+
+        font-size:47px;
+
+        line-height:.97;
+
+        margin-bottom:30px;
+
+    }
+
+
+    .qz-about-content p{
+
+        font-size:13px;
+
+        line-height:1.8;
+
+    }
+
+
+    .qz-about-button{
+
+        font-size:9px;
+
+    }
+
+}
+
+</style>
+<!-- ==================================
+     QUEZIVA COLLECTION
+================================== -->
+
+<section class="qz-collection" id="queziva-collection">
+
+  <div class="qz-collection-head">
+
+    <div>
+      <span>02 — COLLECTION</span>
+
+      <h2>
+        FIND YOUR<br>
+        SIGNATURE
+      </h2>
+    </div>
+
     <p>
-      Timeless jewellery designed to become
-      part of your everyday story.
+      Explore our curated fashion jewellery
+      designed to complement every style
+      and occasion.
     </p>
+
   </div>
 
-  <div class="category-grid">
 
-    <a href="#" class="category-card">
-      <div class="category-img img-one"></div>
-      <div class="category-info">
+  <div class="qz-category-grid">
+
+
+    <!-- NECKLACES -->
+
+    <a href="#" class="qz-category">
+
+      <div class="qz-category-img qz-necklace"></div>
+
+      <div class="qz-category-info">
+
         <span>01</span>
+
         <h3>NECKLACES</h3>
+
         <b>EXPLORE →</b>
+
       </div>
+
     </a>
 
-    <a href="#" class="category-card">
-      <div class="category-img img-two"></div>
-      <div class="category-info">
+
+    <!-- EARRINGS -->
+
+    <a href="#" class="qz-category">
+
+      <div class="qz-category-img qz-earrings"></div>
+
+      <div class="qz-category-info">
+
         <span>02</span>
-        <h3>BRACELETS</h3>
-        <b>EXPLORE →</b>
-      </div>
-    </a>
 
-    <a href="#" class="category-card">
-      <div class="category-img img-three"></div>
-      <div class="category-info">
-        <span>03</span>
-        <h3>RINGS</h3>
-        <b>EXPLORE →</b>
-      </div>
-    </a>
-
-    <a href="#" class="category-card">
-      <div class="category-img img-four"></div>
-      <div class="category-info">
-        <span>04</span>
         <h3>EARRINGS</h3>
+
         <b>EXPLORE →</b>
+
       </div>
+
     </a>
+
+
+    <!-- BRACELETS -->
+
+    <a href="#" class="qz-category">
+
+      <div class="qz-category-img qz-bracelet"></div>
+
+      <div class="qz-category-info">
+
+        <span>03</span>
+
+        <h3>BRACELETS</h3>
+
+        <b>EXPLORE →</b>
+
+      </div>
+
+    </a>
+
+
+    <!-- RINGS -->
+
+    <a href="#" class="qz-category">
+
+      <div class="qz-category-img qz-ring"></div>
+
+      <div class="qz-category-info">
+
+        <span>04</span>
+
+        <h3>RINGS</h3>
+
+        <b>EXPLORE →</b>
+
+      </div>
+
+    </a>
+
 
   </div>
 
@@ -460,377 +977,777 @@ heroVideo.play().catch(() => {
 
 <style>
 
-/* COLLECTION */
+/* ==================================
+   COLLECTION
+================================== */
 
-.collection{
-  background:#f3f0e9;
-  color:#111;
+.qz-collection{
+
+  background:#111;
+
+  color:#f5f0e9;
+
   padding:110px 6%;
+
 }
 
-.collection-head{
-  max-width:650px;
-  margin-bottom:70px;
+
+/* HEADER */
+
+.qz-collection-head{
+
+  display:flex;
+
+  justify-content:space-between;
+
+  align-items:flex-end;
+
+  margin-bottom:65px;
+
 }
 
-.collection-head span{
+
+.qz-collection-head span{
+
   font-size:10px;
+
   letter-spacing:3px;
-  opacity:.6;
+
+  opacity:.5;
+
 }
 
-.collection-head h2{
-  font-family:'Playfair Display',serif;
-  font-size:clamp(42px,6vw,75px);
-  line-height:.95;
+
+.qz-collection-head h2{
+
+  font-family:
+  'Playfair Display',serif;
+
+  font-size:
+  clamp(45px,6vw,78px);
+
+  line-height:.92;
+
   font-weight:400;
-  margin:22px 0;
+
+  margin-top:20px;
+
 }
 
-.collection-head p{
-  max-width:420px;
-  font-size:14px;
-  line-height:1.7;
-  opacity:.65;
+
+.qz-collection-head p{
+
+  max-width:350px;
+
+  font-size:13px;
+
+  line-height:1.8;
+
+  opacity:.55;
+
 }
 
-.category-grid{
+
+/* GRID */
+
+.qz-category-grid{
+
   display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:25px;
+
+  grid-template-columns:
+  repeat(2,1fr);
+
+  gap:22px;
+
 }
 
-.category-card{
+
+/* CARD */
+
+.qz-category{
+
   position:relative;
-  height:580px;
+
+  height:570px;
+
   overflow:hidden;
-  background:#ddd;
+
+  background:#222;
+
 }
 
-.category-img{
-  width:100%;
-  height:100%;
-  background-size:cover;
-  background-position:center;
-  transition:transform .8s ease;
-}
 
-.category-card:hover .category-img{
-  transform:scale(1.06);
-}
+/* IMAGE */
 
-.img-one{
-  background-image:url("https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=1200&q=85");
-}
+.qz-category-img{
 
-.img-two{
-  background-image:url("https://images.unsplash.com/photo-1611652022419-a9419f74343d?auto=format&fit=crop&w=1200&q=85");
-}
-
-.img-three{
-  background-image:url("https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=1200&q=85");
-}
-
-.img-four{
-  background-image:url("https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=1200&q=85");
-}
-
-.category-info{
   position:absolute;
+
+  inset:0;
+
+  background-size:cover;
+
+  background-position:center;
+
+  transition:
+  transform .8s ease;
+
+}
+
+
+/* IMAGE SOURCES */
+
+.qz-necklace{
+
+  background-image:
+  url("https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=1200&q=85");
+
+}
+
+
+.qz-earrings{
+
+  background-image:
+  url("https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=1200&q=85");
+
+}
+
+
+.qz-bracelet{
+
+  background-image:
+  url("https://images.unsplash.com/photo-1611652022419-a9419f74343d?auto=format&fit=crop&w=1200&q=85");
+
+}
+
+
+.qz-ring{
+
+  background-image:
+  url("https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=1200&q=85");
+
+}
+
+
+/* HOVER */
+
+.qz-category:hover
+.qz-category-img{
+
+  transform:scale(1.06);
+
+}
+
+
+/* DARK GRADIENT */
+
+.qz-category::after{
+
+  content:"";
+
+  position:absolute;
+
+  inset:0;
+
+  background:
+  linear-gradient(
+    to bottom,
+    transparent 45%,
+    rgba(0,0,0,.78)
+  );
+
+  z-index:1;
+
+}
+
+
+/* CARD CONTENT */
+
+.qz-category-info{
+
+  position:absolute;
+
   left:25px;
+
   right:25px;
+
   bottom:25px;
-  padding:22px;
-  color:white;
-  background:rgba(0,0,0,.42);
-  backdrop-filter:blur(8px);
+
+  z-index:2;
+
 }
 
-.category-info span{
-  font-size:10px;
-  letter-spacing:2px;
-  opacity:.7;
-}
 
-.category-info h3{
-  font-family:'Playfair Display',serif;
-  font-size:28px;
-  font-weight:400;
-  margin:8px 0 13px;
-}
+.qz-category-info span{
 
-.category-info b{
   font-size:9px;
+
   letter-spacing:2px;
+
+  opacity:.65;
+
 }
 
-/* MOBILE */
+
+.qz-category-info h3{
+
+  font-family:
+  'Playfair Display',serif;
+
+  font-size:30px;
+
+  font-weight:400;
+
+  margin:8px 0 14px;
+
+}
+
+
+.qz-category-info b{
+
+  font-size:9px;
+
+  letter-spacing:2px;
+
+  font-weight:400;
+
+}
+
+
+/* ==================================
+   MOBILE
+================================== */
+
+@media(max-width:700px){
+
+  .qz-collection{
+
+    padding:75px 20px;
+
+  }
+
+
+  .qz-collection-head{
+
+    display:block;
+
+    margin-bottom:42px;
+
+  }
+
+
+  .qz-collection-head h2{
+
+    font-size:47px;
+
+  }
+
+
+  .qz-collection-head p{
+
+    margin-top:25px;
+
+    font-size:13px;
+
+  }
+
+
+  .qz-category-grid{
+
+    grid-template-columns:1fr;
+
+    gap:16px;
+
+  }
+
+
+  .qz-category{
+
+    height:480px;
+
+  }
+
+
+  .qz-category-info{
+
+    left:18px;
+
+    right:18px;
+
+    bottom:18px;
+
+  }
+
+
+  .qz-category-info h3{
+
+    font-size:27px;
+
+  }
+
+}
+
+</style>
+<!-- ==================================
+     QUEZIVA PRODUCTS
+================================== -->
+
+<section class="qz-products" id="qz-products">
+
+  <div class="qz-products-head">
+
+    <div>
+
+      <span>03 — THE EDIT</span>
+
+      <h2>
+        NEW<br>
+        ARRIVALS
+      </h2>
+
+    </div>
+
+    <a href="#" class="qz-view-all">
+      VIEW ALL →
+    </a>
+
+  </div>
+
+
+  <div class="qz-product-grid">
+
+
+    <!-- PRODUCT 1 -->
+
+    <div class="qz-product-card">
+
+      <div class="qz-product-image qz-product-one">
+
+        <span class="qz-new-tag">
+          NEW
+        </span>
+
+        <button class="qz-heart">
+          ♡
+        </button>
+
+      </div>
+
+      <div class="qz-product-details">
+
+        <h3>
+          STATEMENT NECKLACE
+        </h3>
+
+        <p>
+          PREMIUM FASHION JEWELLERY
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <!-- PRODUCT 2 -->
+
+    <div class="qz-product-card">
+
+      <div class="qz-product-image qz-product-two">
+
+        <span class="qz-new-tag">
+          NEW
+        </span>
+
+        <button class="qz-heart">
+          ♡
+        </button>
+
+      </div>
+
+      <div class="qz-product-details">
+
+        <h3>
+          ELEGANT EARRINGS
+        </h3>
+
+        <p>
+          PREMIUM FASHION JEWELLERY
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <!-- PRODUCT 3 -->
+
+    <div class="qz-product-card">
+
+      <div class="qz-product-image qz-product-three">
+
+        <button class="qz-heart">
+          ♡
+        </button>
+
+      </div>
+
+      <div class="qz-product-details">
+
+        <h3>
+          CLASSIC BRACELET
+        </h3>
+
+        <p>
+          PREMIUM FASHION JEWELLERY
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <!-- PRODUCT 4 -->
+
+    <div class="qz-product-card">
+
+      <div class="qz-product-image qz-product-four">
+
+        <button class="qz-heart">
+          ♡
+        </button>
+
+      </div>
+
+      <div class="qz-product-details">
+
+        <h3>
+          SIGNATURE RING
+        </h3>
+
+        <p>
+          PREMIUM FASHION JEWELLERY
+        </p>
+
+      </div>
+
+    </div>
+
+
+  </div>
+
+</section>
+
+
+<style>
+
+/* ==================================
+   PRODUCTS SECTION
+================================== */
+
+.qz-products{
+
+  background:#090909;
+
+  color:#f5f0e9;
+
+  padding:
+  110px 6%;
+
+}
+
+
+/* HEADER */
+
+.qz-products-head{
+
+  display:flex;
+
+  justify-content:space-between;
+
+  align-items:flex-end;
+
+  margin-bottom:60px;
+
+}
+
+
+.qz-products-head span{
+
+  font-size:10px;
+
+  letter-spacing:3px;
+
+  opacity:.5;
+
+}
+
+
+.qz-products-head h2{
+
+  font-family:
+  'Playfair Display',serif;
+
+  font-weight:400;
+
+  font-size:
+  clamp(45px,6vw,78px);
+
+  line-height:.9;
+
+  margin-top:20px;
+
+}
+
+
+.qz-view-all{
+
+  font-size:10px;
+
+  letter-spacing:2px;
+
+  padding-bottom:8px;
+
+  border-bottom:
+  1px solid rgba(255,255,255,.4);
+
+}
+
+
+/* PRODUCT GRID */
+
+.qz-product-grid{
+
+  display:grid;
+
+  grid-template-columns:
+  repeat(4,1fr);
+
+  gap:18px;
+
+}
+
+
+/* PRODUCT IMAGE */
+
+.qz-product-image{
+
+  height:440px;
+
+  position:relative;
+
+  overflow:hidden;
+
+  background-size:cover;
+
+  background-position:center;
+
+  transition:
+  transform .5s ease;
+
+}
+
+
+.qz-product-card:hover
+.qz-product-image{
+
+  transform:scale(1.02);
+
+}
+
+
+/* PRODUCT IMAGES */
+
+.qz-product-one{
+
+  background-image:
+  url("https://images.unsplash.com/photo-1617038220319-276d3cfab638?auto=format&fit=crop&w=900&q=85");
+
+}
+
+
+.qz-product-two{
+
+  background-image:
+  url("https://images.unsplash.com/photo-1535632787350-4e68ef0ac584?auto=format&fit=crop&w=900&q=85");
+
+}
+
+
+.qz-product-three{
+
+  background-image:
+  url("https://images.unsplash.com/photo-1611652022419-a9419f74343d?auto=format&fit=crop&w=900&q=85");
+
+}
+
+
+.qz-product-four{
+
+  background-image:
+  url("https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=900&q=85");
+
+}
+
+
+/* NEW TAG */
+
+.qz-new-tag{
+
+  position:absolute;
+
+  top:14px;
+
+  left:14px;
+
+  z-index:3;
+
+  background:#f5f0e9;
+
+  color:#111;
+
+  padding:
+  8px 11px;
+
+  font-size:8px;
+
+  letter-spacing:2px;
+
+}
+
+
+/* HEART */
+
+.qz-heart{
+
+  position:absolute;
+
+  top:10px;
+
+  right:13px;
+
+  z-index:3;
+
+  border:0;
+
+  background:transparent;
+
+  color:#fff;
+
+  font-size:26px;
+
+  cursor:pointer;
+
+}
+
+
+/* DETAILS */
+
+.qz-product-details{
+
+  padding:
+  17px 2px 30px;
+
+}
+
+
+.qz-product-details h3{
+
+  font-size:10px;
+
+  letter-spacing:1.5px;
+
+  font-weight:500;
+
+}
+
+
+.qz-product-details p{
+
+  font-size:9px;
+
+  letter-spacing:1px;
+
+  opacity:.5;
+
+  margin-top:8px;
+
+}
+
+
+/* ==================================
+   MOBILE
+================================== */
+
+@media(max-width:900px){
+
+  .qz-product-grid{
+
+    grid-template-columns:
+    repeat(2,1fr);
+
+    gap:25px 12px;
+
+  }
+
+
+  .qz-product-image{
+
+    height:330px;
+
+  }
+
+}
+
 
 @media(max-width:600px){
 
-  .collection{
-    padding:75px 20px;
+  .qz-products{
+
+    padding:
+    75px 20px;
+
   }
 
-  .collection-head{
-    margin-bottom:45px;
+
+  .qz-products-head{
+
+    margin-bottom:42px;
+
   }
 
-  .collection-head h2{
-    font-size:45px;
-  }
 
-  .category-grid{
-    grid-template-columns:1fr;
-    gap:18px;
-  }
+  .qz-products-head h2{
 
-  .category-card{
-    height:470px;
-  }
-
-  .category-info{
-    left:15px;
-    right:15px;
-    bottom:15px;
-  }
-
-}
-
-</style>
-<!-- FEATURED COLLECTION -->
-
-<section class="featured">
-
-  <div class="featured-top">
-    <div>
-      <span>02 — THE EDIT</span>
-      <h2>NEW<br>ARRIVALS</h2>
-    </div>
-
-    <a href="#" class="view-all">VIEW ALL →</a>
-  </div>
-
-  <div class="product-grid">
-
-    <div class="product-card">
-      <div class="product-image p1">
-        <span class="tag">NEW</span>
-        <button class="heart">♡</button>
-      </div>
-      <div class="product-detail">
-        <h3>SCULPTED GOLD NECKLACE</h3>
-        <p>₹2,499</p>
-      </div>
-    </div>
-
-    <div class="product-card">
-      <div class="product-image p2">
-        <span class="tag">NEW</span>
-        <button class="heart">♡</button>
-      </div>
-      <div class="product-detail">
-        <h3>MINIMAL PEARL DROP</h3>
-        <p>₹1,899</p>
-      </div>
-    </div>
-
-    <div class="product-card">
-      <div class="product-image p3">
-        <button class="heart">♡</button>
-      </div>
-      <div class="product-detail">
-        <h3>CLASSIC SIGNET RING</h3>
-        <p>₹1,599</p>
-      </div>
-    </div>
-
-    <div class="product-card">
-      <div class="product-image p4">
-        <button class="heart">♡</button>
-      </div>
-      <div class="product-detail">
-        <h3>CURVE STATEMENT EARRINGS</h3>
-        <p>₹2,199</p>
-      </div>
-    </div>
-
-  </div>
-
-</section>
-
-
-<style>
-
-/* FEATURED */
-
-.featured{
-  background:#111;
-  color:#f4f1ea;
-  padding:115px 6%;
-}
-
-.featured-top{
-  display:flex;
-  justify-content:space-between;
-  align-items:flex-end;
-  margin-bottom:65px;
-}
-
-.featured-top span{
-  font-size:10px;
-  letter-spacing:3px;
-  opacity:.55;
-}
-
-.featured-top h2{
-  font-family:'Playfair Display',serif;
-  font-size:clamp(45px,6vw,75px);
-  font-weight:400;
-  line-height:.9;
-  margin-top:20px;
-}
-
-.view-all{
-  font-size:10px;
-  letter-spacing:2px;
-  border-bottom:1px solid #777;
-  padding-bottom:8px;
-}
-
-.product-grid{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:20px;
-}
-
-.product-card{
-  min-width:0;
-}
-
-.product-image{
-  height:440px;
-  position:relative;
-  overflow:hidden;
-  background-size:cover;
-  background-position:center;
-}
-
-.product-image::after{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:linear-gradient(
-    to bottom,
-    transparent 65%,
-    rgba(0,0,0,.25)
-  );
-}
-
-.p1{
-  background-image:url("https://images.unsplash.com/photo-1617038220319-276d3cfab638?auto=format&fit=crop&w=900&q=85");
-}
-
-.p2{
-  background-image:url("https://images.unsplash.com/photo-1535632787350-4e68ef0ac584?auto=format&fit=crop&w=900&q=85");
-}
-
-.p3{
-  background-image:url("https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=900&q=85");
-}
-
-.p4{
-  background-image:url("https://images.unsplash.com/photo-1535556116002-6281ff3e9fcd?auto=format&fit=crop&w=900&q=85");
-}
-
-.product-image{
-  transition:transform .5s ease;
-}
-
-.product-card:hover .product-image{
-  transform:scale(1.025);
-}
-
-.tag{
-  position:absolute;
-  top:15px;
-  left:15px;
-  z-index:2;
-  font-size:8px;
-  letter-spacing:2px;
-  background:#f4f1ea;
-  color:#111;
-  padding:8px 11px;
-}
-
-.heart{
-  position:absolute;
-  right:15px;
-  top:13px;
-  z-index:3;
-  border:0;
-  background:transparent;
-  color:white;
-  font-size:25px;
-  cursor:pointer;
-}
-
-.product-detail{
-  padding-top:17px;
-}
-
-.product-detail h3{
-  font-size:10px;
-  letter-spacing:1.5px;
-  font-weight:500;
-}
-
-.product-detail p{
-  font-size:12px;
-  margin-top:8px;
-  opacity:.65;
-}
-
-/* MOBILE */
-
-@media(max-width:800px){
-
-  .featured{
-    padding:75px 20px;
-  }
-
-  .featured-top{
-    align-items:flex-end;
-    margin-bottom:40px;
-  }
-
-  .featured-top h2{
     font-size:47px;
+
   }
 
-  .view-all{
-    font-size:9px;
+
+  .qz-product-grid{
+
+    gap:22px 10px;
+
   }
 
-  .product-grid{
-    grid-template-columns:repeat(2,1fr);
-    gap:25px 12px;
+
+  .qz-product-image{
+
+    height:270px;
+
   }
 
-  .product-image{
-    height:300px;
+
+  .qz-product-details h3{
+
+    font-size:8px;
+
   }
 
-}
 
-@media(max-width:480px){
+  .qz-product-details p{
 
-  .product-image{
-    height:250px;
-  }
+    font-size:7px;
 
-  .product-detail h3{
-    font-size:9px;
   }
 
 }
